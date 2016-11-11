@@ -44,7 +44,7 @@
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                 //alert(xmlHttp.response.length);
                 var blob = new Blob([xmlHttp.response], {type: "application/octet-stream"});
-                saveAs(blob, audioName+".mp3");
+                saveAs(blob, audioName);
             }
             else if (xmlHttp.readyState == 4 && xmlHttp.status != 200) {
                 alert('Some problems');

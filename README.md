@@ -24,6 +24,6 @@ replace
 ```
 by
 ```
-// @require     file:///<path to>/jquery.min.js
-// @require     file:///<path to>/FileSaver.min.js
+// @require     file:///<local path to>/jquery.min.js
+// @require     file:///<local path to>/FileSaver.min.js
 ```
