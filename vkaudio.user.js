@@ -42,7 +42,6 @@
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() { 
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                //alert(xmlHttp.response.length);
                 var blob = new Blob([xmlHttp.response], {type: "application/octet-stream"});
                 saveAs(blob, audioName);
             }
@@ -70,7 +69,8 @@
             
             var track_name = track_name_raw.replace(/[/\\:*?<>|]/g, '');
 
-            $(this).append('<a class="myAudioDownloadLink" ' + 
+            if ( $( this ).find( ".myAudioDownloadLink" ).length == 0 ) {
+                $(this).append('<a class="myAudioDownloadLink" ' + 
                            '   title="' + track_name + '.mp3" ' + 
                            '   target="_blank" ' +
                            '>' +
@@ -79,7 +79,8 @@
                            '    <div class="myProgressBar"></div>' +
                            '  </div>' +
                            '</a>'
-            );
+                );
+            }
         });
 
         $('.myAudioDownloadLink').click(function(e) {
