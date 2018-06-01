@@ -1,6 +1,6 @@
 ﻿// ==UserScript==
 // @name        vk music downloader
-// @description This script adds download links to audios at vk.com. If links did not appear automatically press F9.
+// @description This script adds download links to audios at vk.com. If links did not appear automatically press F8.
 // @match       *://vk.com/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
 // @require     https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.min.js
@@ -127,7 +127,7 @@
     function add_download_links() {
         $(audio_row_selector).each(function() {
             if ( $( this ).find( ".myAudioDownloadLink" ).length == 0 ) {
-                var track_name_raw = $(this).find('.audio_row__inner').find('.audio_row__performer').text() +
+                var track_name_raw = $(this).find('.audio_row__inner').find('.audio_row__performers').text() +
                                     ' – ' +
                                     $(this).find('.audio_row__inner').find('.audio_row__title_inner').text();
 
@@ -200,7 +200,7 @@
         add_download_links();
 
         $('body').keydown(function(e){
-            if (e.which == 120) { // F9
+            if (e.which == 119) { // F8
                 add_download_links();
             }
         });
