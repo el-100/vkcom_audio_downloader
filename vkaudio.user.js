@@ -132,20 +132,22 @@
                                     $(this).find('.audio_row__inner').find('.audio_row__title_inner').text();
 
                 var track_name = track_name_raw.replace(/[/\\:*?<>|]/g, '');
+                console.log("Found track: " + track_name);
 
                 $(this).append('<a class="myAudioDownloadLink" ' + 
-                           '   title="' + track_name + '.mp3" ' + 
-                           '   target="_blank" ' +
-                           '>' +
-                           '  <div class="myProgressFrame">' +
-                           '    <div class="myProgressText"> &#9835; </div>' +
-                           '    <div class="myProgressBar"></div>' +
-                           '  </div>' +
-                           '</a>'
+                               '   title="' + track_name + '.mp3" ' + 
+                               '   target="_blank" ' +
+                               '>' +
+                               '  <div class="myProgressFrame">' +
+                               '    <div class="myProgressText"> &#9835; </div>' +
+                               '    <div class="myProgressBar"></div>' +
+                               '  </div>' +
+                               '</a>'
                 );
             }
         });
 
+        $('.myAudioDownloadLink').unbind( "click" );
         $('.myAudioDownloadLink').click(function(e) {
             e.stopPropagation();
 
@@ -195,7 +197,7 @@
         $('body').append('<style> a.myAudioDownloadLink {' + linkStyle + '} </style>');
         
         vk_id = $("#l_aud").find("a").attr("href").split("/audios")[1];
-        console.log(vk_id);
+        //console.log(vk_id);
         
         add_download_links();
 
