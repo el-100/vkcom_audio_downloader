@@ -5,7 +5,7 @@
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js
 // @require     https://raw.githubusercontent.com/eligrey/FileSaver.js/master/FileSaver.min.js
 // @grant none
-// 17.12.2017
+// 10.11.2018
 // ==/UserScript==
 // allow pasting
 
